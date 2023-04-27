@@ -1,6 +1,6 @@
-# Just Current Weather
+# Just Current Weather [CHECK IT HERE](https://jcw.nemr.me) 
+Clean Architecture Example Applying a Simple Weather App gets current weather data for current location.
 
-Clean Architecture Example Applying a Simple Weather App
 
 ## Using:
 
@@ -9,3 +9,9 @@ Clean Architecture Example Applying a Simple Weather App
 - flutter_hooks : auto create-dispose states within widgets.
 - Dalle-2: Generated App Icon. 
 and more...
+
+## Deployment: 
+
+ ``` flutter run --dart-define=BASEURL=openWeatherMapAPILink --dart-define=APIKEY=openWeatherMapAPIKey ```
+ 
+ 
