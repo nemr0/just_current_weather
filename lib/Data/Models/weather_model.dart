@@ -1,4 +1,4 @@
-import 'package:weather_app/Domain/Entities/weather.dart';
+import '../../Domain/Entities/weather.dart';
 
 class WeatherModel extends Weather {
   WeatherModel(
@@ -24,9 +24,9 @@ class WeatherModel extends Weather {
       description: weatherMap['description'],
       name: json['name'],
       country: json['sys']['country'],
-      tempMin: mainMap['temp_min'],
-      tempMax: mainMap['temp_max'],
-      temp: mainMap['temp'],
+      tempMin: double.parse(mainMap['temp_min'].toString()),
+      tempMax: double.parse(mainMap['temp_max'].toString()),
+      temp: double.parse(mainMap['temp'].toString()),
       feelsLike: mainMap['feels_like'],
       humidity: mainMap['humidity'],
       pressure: mainMap['pressure'],

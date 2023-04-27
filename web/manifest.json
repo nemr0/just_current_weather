@@ -1,11 +1,11 @@
 {
-    "name": "weather_app",
-    "short_name": "weather_app",
+    "name": "Just Current Weather",
+    "short_name": "JCW",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
+    "background_color": "#202020",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Gets Current Weather data upon location",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

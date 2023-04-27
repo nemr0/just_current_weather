@@ -3,12 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:weather_app/Presentation/Handler/get_current_location.dart';
 import 'package:flutter/material.dart';
 import '../../Data/Datasource/remote_datasource/remote_datasource.dart';
 import '../../Data/Repo/weather_repo.dart';
 import '../../Domain/Entities/weather.dart';
 import '../../Domain/Usecase/get_weather_by_city.dart';
+import '../Handler/get_current_location.dart';
 
 part 'weather_state.dart';
 
@@ -34,6 +34,7 @@ class WeatherCubit extends Cubit<WeatherState> {
   }
 
   getCurrentWeatherNow(Position position) async {
+    emit(LoadingCurrentWeatherState());
     try {
       Weather weather =
           await GetWeatherByLocation(WeatherRepo(RemoteDataSource()))
@@ -43,7 +44,7 @@ class WeatherCubit extends Cubit<WeatherState> {
       if (kDebugMode) {
         print(e.message);
       }
-      emit(WeatherException(e));
+      emit(WeatherExceptionState(e));
     }
   }
 

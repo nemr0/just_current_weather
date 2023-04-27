@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
   <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
@@ -18,8 +16,24 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
+  <meta name="description" content="Gets Current Weather data upon location.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jcw.nemr.me/">
+  <meta property="og:title" content="Just Current Weather">
+  <meta property="og:description" content="Gets Current Weather data upon location.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/nemr0/just_current_weather/main/jcw-thumbnail.png">
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/nemr0/just_current_weather/main/jcw-thumbnail-whatsapp.png">
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://jcw.nemr.me/">
+  <meta property="twitter:title" content="Just Current Weather">
+  <meta property="twitter:description" content="Gets Current Weather data upon location.">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/nemr0/just_current_weather/main/jcw-thumbnail-twitter.png">
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -27,7 +41,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <title>weather_app</title>
   <link rel="manifest" href="manifest.json">
@@ -37,137 +51,26 @@
     var serviceWorkerVersion = null;
   </script>
   <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <script src="flutter.js" defer=""></script>
+  <link rel="stylesheet" type="text/css" href="splash/style.css">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <script src="splash/splash.js"></script>
 </head>
 <body style="
    background-color: #2f2f2f;
  overflow: hidden;
-">
-
-<style>
-  .background{
- overflow: hidden;
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  opacity: 1;
-  transition: opacity .4s ease-out;
-  background-image: url('assets/background.png');
-  margin: 0;
-}
-   .loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  opacity: 1;
-  transition: opacity .4s ease-out;
-}
-
-.loader {
-  position: relative;
-  width: 150px;
-  height: 150px;
-}
-
-.thinker {
-  background-image: url('assets/theThinker.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-.spinner {
-        transform: rotateZ(45deg);
-        perspective: 1000px;
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        color: #fff;
-      }
-        .spinner:before,
-        .spinner:after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: inherit;
-          height: inherit;
-          border-radius: 50%;
-          transform: rotateX(70deg);
-          animation: 1s spin linear infinite;
-        }
-        .spinner:after {
-          color: #FF6C01;
-          transform: rotateY(70deg);
-          animation-delay: .4s;
-        }
-
-      @keyframes rotate {
-        0% {
-          transform: translate(-50%, -50%) rotateZ(0deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotateZ(360deg);
-        }
-      }
-
-      @keyframes rotateccw {
-        0% {
-          transform: translate(-50%, -50%) rotate(0deg);
-        }
-        100% {
-          transform: translate(-50%, -50%) rotate(-360deg);
-        }
-      }
-
-      @keyframes spin {
-        0%,
-        100% {
-          box-shadow: .2em 0px 0 0px currentcolor;
-        }
-        12% {
-          box-shadow: .2em .2em 0 0 currentcolor;
-        }
-        25% {
-          box-shadow: 0 .2em 0 0px currentcolor;
-        }
-        37% {
-          box-shadow: -.2em .2em 0 0 currentcolor;
-        }
-        50% {
-          box-shadow: -.2em 0 0 0 currentcolor;
-        }
-        62% {
-          box-shadow: -.2em -.2em 0 0 currentcolor;
-        }
-        75% {
-          box-shadow: 0px -.2em 0 0 currentcolor;
-        }
-        87% {
-          box-shadow: .2em -.2em 0 0 currentcolor;
-        }
-      }
+">  <picture id="splash">
+      <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
+      <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
+      <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
+  </picture>
 
 
-</style>
 
   <script>
-  function delay(time){
-  return new Promise(resolve => setTimeout(resolve,time));
-  }
+
     window.addEventListener('load', function(ev) {
-    var loaderContent=document.querySelector('#loader-content');
-    var loaderBg=document.querySelector('#loader-bg');
+
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
@@ -175,10 +78,8 @@
         },
         onEntrypointLoaded: function(engineInitializer) {
           engineInitializer.initializeEngine().then(function(appRunner) {
-          loaderContent.style.opacity="0";
-          loaderBg.style.opacity="0";
 
-           delay(300).then(()=>appRunner.runApp());
+           appRunner.runApp();
 
           });
         }
@@ -195,5 +96,6 @@
   </div>
 </div>
 
-</body>
-</html>
+
+
+</body></html>

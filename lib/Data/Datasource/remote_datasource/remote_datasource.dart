@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:weather_app/Core/utils/consts.dart';
-import 'package:weather_app/Data/Models/weather_model.dart';
 import 'package:dio/dio.dart';
+
+import '../../../Core/utils/consts.dart';
+import '../../Models/weather_model.dart';
 
 abstract class BaseRemoteDataSource {
   Future<WeatherModel> getWeatherByLocation(double lat, double lon);

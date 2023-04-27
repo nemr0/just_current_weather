@@ -30,7 +30,7 @@ class GotWeatherState extends WeatherState {
 }
 
 /// Emitted when There's an Exception Getting Data From API.
-class WeatherException extends WeatherState {
+class WeatherExceptionState extends WeatherState {
   final DioError dioError;
-  WeatherException(this.dioError);
+  WeatherExceptionState(this.dioError);
 }

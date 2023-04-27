@@ -1,5 +1,5 @@
-name: weather_app
-description: A new Flutter project.
+name: just_current_weather
+description: A clean-arch weather app gets current location.
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -17,12 +17,31 @@ dependencies:
   geolocator: ^9.0.2
   flutter_bloc: ^8.1.2
   glassmorphism: ^3.0.0
+  google_fonts: ^4.0.4
+  flutter_native_splash: ^2.2.19
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
+#  flutter_app_name: ^0.1.0
+  flutter_launcher_icons: ^0.13.1
+flutter_native_splash:
+  color: "#202020"
+  image: "assets/logo.png"
+  android: true
+  ios: true
+  web: true
+#flutter_app_name:
+#  name: "Just Current Weather"
+flutter_launcher_icons:
+  image_path: "assets/logo.png"
+  ios: true
+  remove_alpha_ios: true
+  android: true
+  web:
+    generate: true
 flutter:
 
   uses-material-design: true

@@ -1,6 +1,6 @@
-import 'package:weather_app/Data/Datasource/remote_datasource/remote_datasource.dart';
-import 'package:weather_app/Domain/Entities/weather.dart';
-import 'package:weather_app/Domain/Repo/base_weather_repo.dart';
+import '../../Domain/Entities/weather.dart';
+import '../../Domain/Repo/base_weather_repo.dart';
+import '../Datasource/remote_datasource/remote_datasource.dart';
 
 class WeatherRepo implements BaseWeatherRepo {
   final BaseRemoteDataSource remoteDataSource;
